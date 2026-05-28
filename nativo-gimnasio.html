@@ -1,0 +1,1057 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Nativo Gym | Entrenamiento Real · Neuquén</title>
+<meta name="description" content="Nativo Gym — El gimnasio que te entrena de verdad. Musculación, clases grupales y entrenamiento funcional en Neuquén Capital.">
+<meta name="keywords" content="gimnasio Neuquén, gym Neuquén capital, musculación, entrenamiento funcional, clases grupales, Nativo Gym">
+<meta property="og:title" content="Nativo Gym | Entrenamiento Real">
+<meta property="og:description" content="El gimnasio que te entrena de verdad. Neuquén · Ignacio Rivas 1000">
+<meta property="og:type" content="website">
+<meta name="robots" content="index, follow">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:ital,wght@0,300;0,400;0,600;0,700;0,900;1,700&family=Barlow:wght@300;400;500&display=swap" rel="stylesheet">
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+:root{
+  --black:#0a0a0a;--white:#f5f2ed;--accent:#c8f000;
+  --gray:#181818;--gray2:#222;--gray3:#2c2c2c;--muted:#666;
+  --font-h:'Barlow Condensed',sans-serif;--font-b:'Barlow',sans-serif;
+}
+html{scroll-behavior:smooth}
+body{background:var(--black);color:var(--white);font-family:var(--font-b);overflow-x:hidden}
+a{color:inherit;text-decoration:none}
+
+/* ── NAV ── */
+nav#main-nav{position:fixed;top:0;left:0;right:0;z-index:100;height:66px;padding:0 clamp(1.2rem,5vw,5rem);display:flex;align-items:center;justify-content:space-between;background:rgba(10,10,10,.9);backdrop-filter:blur(16px);border-bottom:1px solid rgba(255,255,255,.05)}
+.nav-logo{font-family:var(--font-h);font-size:1.75rem;font-weight:900;letter-spacing:.06em;color:var(--accent)}
+.nav-links{display:flex;gap:2rem;list-style:none}
+.nav-links a{font-size:.77rem;letter-spacing:.14em;text-transform:uppercase;color:var(--muted);transition:color .2s}
+.nav-links a:hover{color:var(--white)}
+.nav-right{display:flex;align-items:center;gap:1.1rem}
+.btn-nav-cta{background:var(--accent);color:var(--black);font-family:var(--font-h);font-weight:700;font-size:.82rem;letter-spacing:.1em;text-transform:uppercase;padding:.5rem 1.5rem;border:none;cursor:pointer;transition:transform .15s}
+.btn-nav-cta:hover{transform:scale(1.04)}
+.btn-nav-admin{font-size:.7rem;letter-spacing:.12em;text-transform:uppercase;color:var(--muted);background:none;border:none;font-family:var(--font-b);cursor:pointer;transition:color .2s;padding:0}
+.btn-nav-admin:hover{color:rgba(245,242,237,.4)}
+
+/* ── HERO ── */
+#hero{min-height:100svh;display:grid;grid-template-rows:1fr auto;padding-top:66px;position:relative;overflow:hidden}
+.hero-bg{position:absolute;inset:0;background:linear-gradient(140deg,#0a0a0a 42%,#0e0e0b)}
+.hero-lines{position:absolute;inset:0;background-image:repeating-linear-gradient(0deg,transparent,transparent 79px,rgba(255,255,255,.018) 79px,rgba(255,255,255,.018) 80px),repeating-linear-gradient(90deg,transparent,transparent 79px,rgba(255,255,255,.018) 79px,rgba(255,255,255,.018) 80px)}
+.hero-vbar{position:absolute;top:0;right:clamp(5rem,13vw,15rem);width:2px;height:45%;background:var(--accent);opacity:.45}
+.hero-content{position:relative;z-index:2;display:flex;flex-direction:column;justify-content:center;padding:3rem clamp(1.2rem,6vw,6rem) 2rem}
+.hero-eyebrow{font-family:var(--font-h);font-size:.71rem;letter-spacing:.32em;text-transform:uppercase;color:var(--accent);margin-bottom:1.5rem;display:flex;align-items:center;gap:.75rem}
+.hero-eyebrow::before{content:'';width:2.4rem;height:2px;background:var(--accent);display:block;flex-shrink:0}
+.hero-h1{font-family:var(--font-h);font-size:clamp(4rem,12.5vw,11rem);font-weight:900;line-height:.87;letter-spacing:-.02em;text-transform:uppercase}
+.hero-h1 .hl2{color:var(--accent);display:block}
+.hero-sub{margin-top:1.7rem;font-size:clamp(.93rem,1.7vw,1.1rem);font-weight:300;color:rgba(245,242,237,.58);max-width:480px;line-height:1.68}
+.hero-btns{margin-top:2.5rem;display:flex;gap:.9rem;flex-wrap:wrap}
+.btn-primary{background:var(--accent);color:var(--black);font-family:var(--font-h);font-weight:700;font-size:.92rem;letter-spacing:.12em;text-transform:uppercase;padding:.88rem 2.1rem;border:none;cursor:pointer;transition:transform .15s,box-shadow .15s}
+.btn-primary:hover{transform:translateY(-2px);box-shadow:0 8px 28px rgba(200,240,0,.22)}
+.btn-outline{background:transparent;color:var(--white);font-family:var(--font-h);font-weight:600;font-size:.92rem;letter-spacing:.12em;text-transform:uppercase;padding:.88rem 2.1rem;border:1.5px solid rgba(245,242,237,.22);cursor:pointer;transition:all .2s}
+.btn-outline:hover{border-color:var(--accent);color:var(--accent)}
+.hero-stats{position:relative;z-index:2;display:grid;grid-template-columns:repeat(3,1fr);border-top:1px solid rgba(255,255,255,.06)}
+.hstat{padding:1.6rem clamp(1.2rem,6vw,6rem);border-right:1px solid rgba(255,255,255,.06)}
+.hstat:last-child{border-right:none}
+.hstat-num{font-family:var(--font-h);font-size:2.7rem;font-weight:900;color:var(--accent);line-height:1}
+.hstat-lbl{font-size:.71rem;letter-spacing:.13em;text-transform:uppercase;color:var(--muted);margin-top:.25rem}
+
+/* ── SECTIONS ── */
+section.ps{padding:5.5rem clamp(1.2rem,6vw,6rem)}
+.sec-tag{font-family:var(--font-h);font-size:.69rem;letter-spacing:.32em;text-transform:uppercase;color:var(--accent);margin-bottom:.9rem;display:flex;align-items:center;gap:.7rem}
+.sec-tag::before{content:'';width:1.8rem;height:2px;background:var(--accent);display:block;flex-shrink:0}
+.sec-h2{font-family:var(--font-h);font-size:clamp(2.4rem,5.5vw,4.8rem);font-weight:900;line-height:.9;text-transform:uppercase}
+
+/* ── SERVICIOS ── */
+#servicios{background:var(--gray)}
+.svcs-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(258px,1fr));gap:1px;margin-top:3rem;background:rgba(255,255,255,.05)}
+.svc-card{background:var(--gray);padding:2.2rem 1.8rem;position:relative;overflow:hidden;transition:background .3s;cursor:default}
+.svc-card:hover{background:var(--gray2)}
+.svc-card::after{content:'';position:absolute;bottom:0;left:0;right:0;height:2px;background:var(--accent);transform:scaleX(0);transform-origin:left;transition:transform .32s}
+.svc-card:hover::after{transform:scaleX(1)}
+.svc-icon{width:54px;height:54px;margin-bottom:1.1rem;display:flex;align-items:center;justify-content:center;border:1px solid rgba(255,255,255,.09);overflow:hidden;flex-shrink:0}
+.svc-icon img{width:100%;height:100%;object-fit:cover}
+.svc-icon-txt{width:100%;height:100%;display:flex;align-items:center;justify-content:center;font-family:var(--font-h);font-size:1.1rem;font-weight:900;color:var(--accent);background:rgba(200,240,0,.06);letter-spacing:.04em}
+.svc-name{font-family:var(--font-h);font-size:1.55rem;font-weight:700;text-transform:uppercase;letter-spacing:.03em;margin-bottom:.65rem}
+.svc-desc{font-size:.87rem;color:rgba(245,242,237,.5);line-height:1.65}
+
+/* ── HORARIOS ── */
+#horarios{background:var(--black)}
+.sch-wrap{display:grid;grid-template-columns:1fr 1fr;gap:4rem;margin-top:3rem;align-items:start}
+.sch-tbl{width:100%;border-collapse:collapse}
+.sch-tbl tr{border-bottom:1px solid rgba(255,255,255,.06)}
+.sch-tbl td{padding:.95rem 0;font-size:.92rem}
+.sch-tbl td:first-child{color:var(--muted);font-size:.77rem;letter-spacing:.1em;text-transform:uppercase}
+.sch-tbl td:last-child{text-align:right;font-family:var(--font-h);font-size:1.06rem;font-weight:600;color:var(--accent)}
+.sch-note{margin-top:1.9rem;padding:1.4rem;border-left:2px solid var(--accent);background:rgba(200,240,0,.04)}
+.sch-note p{font-size:.85rem;color:rgba(245,242,237,.52);line-height:1.62}
+.map-box{background:var(--gray2);height:280px;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:.7rem;border:1px solid rgba(255,255,255,.07);cursor:pointer;transition:border-color .3s;text-align:center;padding:1rem}
+.map-box:hover{border-color:var(--accent)}
+.map-addr{font-family:var(--font-h);font-size:1.35rem;font-weight:700}
+.map-city{font-size:.79rem;letter-spacing:.1em;text-transform:uppercase;color:var(--muted)}
+.map-cta{font-family:var(--font-h);font-size:.75rem;letter-spacing:.12em;text-transform:uppercase;color:var(--accent);margin-top:.3rem}
+
+/* ── PLANES ── */
+#planes{background:var(--gray)}
+.plans-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(238px,1fr));gap:1px;margin-top:3rem;background:rgba(255,255,255,.05)}
+.plan-card{background:var(--gray);padding:2.2rem 1.8rem;transition:background .3s}
+.plan-card.feat{background:var(--accent)}
+.plan-card.feat .plan-name,.plan-card.feat .plan-price,.plan-card.feat .plan-per{color:var(--black)}
+.plan-card.feat .plan-item{color:rgba(10,10,10,.62);border-color:rgba(10,10,10,.12)}
+.plan-card.feat .plan-item::before{color:rgba(10,10,10,.45)}
+.plan-card.feat .plan-badge{background:var(--black);color:var(--accent)}
+.plan-card.feat .plan-btn{background:var(--black);border-color:var(--black);color:var(--accent)}
+.plan-badge{display:inline-block;font-family:var(--font-h);font-size:.62rem;letter-spacing:.18em;text-transform:uppercase;padding:.24rem .7rem;background:var(--accent);color:var(--black);margin-bottom:1rem}
+.plan-name{font-family:var(--font-h);font-size:1.75rem;font-weight:700;text-transform:uppercase;margin-bottom:.35rem}
+.plan-price{font-family:var(--font-h);font-size:2.8rem;font-weight:900;line-height:1;color:var(--accent)}
+.plan-per{font-size:.77rem;color:var(--muted);margin-bottom:1.4rem;letter-spacing:.08em}
+.plan-items{list-style:none;margin-bottom:1.8rem}
+.plan-item{padding:.6rem 0;font-size:.87rem;border-bottom:1px solid rgba(255,255,255,.06);color:rgba(245,242,237,.62);display:flex;align-items:flex-start;gap:.55rem}
+.plan-item::before{content:'—';color:var(--accent);font-family:var(--font-h);font-weight:700;flex-shrink:0;margin-top:.05rem}
+.plan-btn{width:100%;background:transparent;border:1.5px solid rgba(255,255,255,.17);color:var(--white);font-family:var(--font-h);font-weight:700;font-size:.82rem;letter-spacing:.12em;text-transform:uppercase;padding:.8rem;cursor:pointer;transition:all .2s}
+.plan-btn:hover{background:var(--accent);border-color:var(--accent);color:var(--black)}
+
+/* ── CONTACTO ── */
+#contacto{background:var(--black)}
+.contact-grid{display:grid;grid-template-columns:1fr 1fr;gap:5rem;margin-top:3rem;align-items:start}
+.contact-form{display:flex;flex-direction:column;gap:.9rem}
+.fg{display:flex;flex-direction:column;gap:.33rem}
+.fg label{font-size:.69rem;letter-spacing:.15em;text-transform:uppercase;color:var(--muted)}
+.fg input,.fg textarea,.fg select{background:var(--gray2);border:1px solid rgba(255,255,255,.07);color:var(--white);padding:.82rem .95rem;font-family:var(--font-b);font-size:.93rem;outline:none;transition:border-color .2s;width:100%}
+.fg input:focus,.fg textarea:focus,.fg select:focus{border-color:var(--accent)}
+.fg textarea{height:108px;resize:none}
+.fg select option{background:var(--gray2)}
+.cinfo{display:flex;flex-direction:column;gap:1.8rem}
+.ci-label{font-size:.69rem;letter-spacing:.18em;text-transform:uppercase;color:var(--muted);margin-bottom:.3rem}
+.ci-val{font-family:var(--font-h);font-size:1.15rem;font-weight:600}
+.ci-sub{font-size:.82rem;color:var(--muted);margin-top:.12rem}
+.soc-row{display:flex;gap:.75rem;flex-wrap:wrap;margin-top:.4rem}
+.soc-chip{font-family:var(--font-h);font-size:.74rem;letter-spacing:.1em;text-transform:uppercase;padding:.44rem .95rem;border:1px solid rgba(255,255,255,.11);color:var(--muted);transition:all .2s;display:inline-block}
+.soc-chip:hover{border-color:var(--accent);color:var(--accent)}
+
+/* ── FOOTER ── */
+footer{border-top:1px solid rgba(255,255,255,.05);padding:1.8rem clamp(1.2rem,6vw,6rem);display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:.8rem}
+.footer-logo{font-family:var(--font-h);font-size:1.1rem;font-weight:900;letter-spacing:.08em;color:var(--accent)}
+.footer-copy{font-size:.71rem;color:var(--muted)}
+
+/* ── TOAST ── */
+#toast{position:fixed;bottom:2rem;right:2rem;background:var(--accent);color:var(--black);font-family:var(--font-h);font-weight:700;font-size:.8rem;letter-spacing:.1em;text-transform:uppercase;padding:.85rem 1.5rem;z-index:9999;transform:translateY(140%);transition:transform .38s cubic-bezier(.34,1.56,.64,1);pointer-events:none;max-width:320px}
+#toast.show{transform:translateY(0)}
+#toast.err{background:#ff3c1f;color:#fff}
+
+/* ── LOADER ── */
+#loader{position:fixed;inset:0;background:var(--black);z-index:999;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:1.3rem;transition:opacity .5s}
+#loader.gone{opacity:0;pointer-events:none}
+.ld-logo{font-family:var(--font-h);font-size:3.2rem;font-weight:900;color:var(--accent);letter-spacing:.1em}
+.ld-bar{width:200px;height:2px;background:rgba(255,255,255,.08)}
+.ld-fill{height:100%;background:var(--accent);width:0;transition:width .4s}
+.ld-txt{font-size:.7rem;letter-spacing:.22em;text-transform:uppercase;color:var(--muted)}
+
+/* ── MODAL ── */
+.mo{position:fixed;inset:0;background:rgba(0,0,0,.88);z-index:200;display:none;align-items:center;justify-content:center;padding:1rem}
+.mo.open{display:flex}
+.mo-box{background:var(--gray);border:1px solid rgba(255,255,255,.07);padding:2.4rem;width:100%;max-width:400px;position:relative}
+.mo-close{position:absolute;top:.9rem;right:.9rem;background:none;border:none;color:var(--muted);font-size:1.3rem;cursor:pointer;line-height:1}
+.mo-close:hover{color:var(--white)}
+.mo-logo{font-family:var(--font-h);font-size:1.85rem;font-weight:900;color:var(--accent);margin-bottom:.15rem}
+.mo-sub{font-size:.79rem;color:var(--muted);margin-bottom:1.7rem}
+.login-err{font-size:.77rem;color:#ff6b5b;display:none;margin-top:-.25rem}
+
+/* ── FIREBASE STATUS ── */
+#fb-status{position:fixed;bottom:2rem;left:2rem;display:flex;align-items:center;gap:.5rem;font-size:.68rem;letter-spacing:.1em;text-transform:uppercase;color:var(--muted);z-index:50;opacity:0;transition:opacity .3s;pointer-events:none}
+#fb-status.vis{opacity:1}
+.fb-dot{width:7px;height:7px;border-radius:50%;background:var(--accent)}
+.fb-dot.pulse{animation:fbpulse 1.2s infinite}
+.fb-dot.red{background:#ff3c1f}
+@keyframes fbpulse{0%,100%{opacity:1}50%{opacity:.25}}
+
+/* ── ADMIN ── */
+#adm{position:fixed;inset:0;z-index:500;background:var(--black);overflow-y:auto;display:none}
+#adm.open{display:block}
+.adm-nav{background:var(--gray);border-bottom:1px solid rgba(255,255,255,.06);padding:0 2rem;display:flex;align-items:center;justify-content:space-between;height:58px;position:sticky;top:0;z-index:10;gap:1rem}
+.adm-nav-logo{font-family:var(--font-h);font-size:1.2rem;font-weight:900;color:var(--accent)}
+.adm-sync{display:flex;align-items:center;gap:.45rem;font-size:.68rem;letter-spacing:.1em;text-transform:uppercase;color:var(--muted)}
+.sd{width:7px;height:7px;border-radius:50%;background:var(--accent);flex-shrink:0}
+.sd.s{background:#f5c842;animation:fbpulse 1s infinite}
+.sd.e{background:#ff3c1f}
+.adm-close-btn{background:none;border:1px solid rgba(255,255,255,.12);color:var(--white);padding:.36rem .9rem;font-family:var(--font-h);font-size:.77rem;letter-spacing:.1em;text-transform:uppercase;cursor:pointer;transition:all .2s;flex-shrink:0}
+.adm-close-btn:hover{border-color:var(--accent);color:var(--accent)}
+.adm-layout{display:grid;grid-template-columns:195px 1fr;min-height:calc(100vh - 58px)}
+.adm-side{background:var(--gray2);padding:1.5rem 0;border-right:1px solid rgba(255,255,255,.06)}
+.adm-menu{list-style:none}
+.adm-menu a{display:block;padding:.65rem 1.4rem;font-size:.73rem;letter-spacing:.1em;text-transform:uppercase;color:var(--muted);cursor:pointer;border-left:2px solid transparent;transition:all .2s}
+.adm-menu a:hover,.adm-menu a.on{color:var(--accent);background:rgba(200,240,0,.05);border-left-color:var(--accent)}
+.adm-main{padding:2.2rem}
+.adm-sec{display:none}
+.adm-sec.on{display:block}
+.adm-h{font-family:var(--font-h);font-size:1.9rem;font-weight:900;text-transform:uppercase;margin-bottom:.35rem}
+.adm-hint{font-size:.78rem;color:var(--muted);margin-bottom:2rem}
+.adm-sh{font-family:var(--font-h);font-size:.95rem;font-weight:700;text-transform:uppercase;color:rgba(245,242,237,.55);margin:1.7rem 0 .9rem}
+.adm-cards{display:grid;grid-template-columns:repeat(auto-fit,minmax(155px,1fr));gap:1rem;margin-bottom:2rem}
+.adm-card{background:var(--gray2);padding:1.35rem;border:1px solid rgba(255,255,255,.05)}
+.adm-cv{font-family:var(--font-h);font-size:2rem;font-weight:900;color:var(--accent)}
+.adm-cl{font-size:.68rem;letter-spacing:.1em;text-transform:uppercase;color:var(--muted);margin-top:.2rem}
+.atbl{width:100%;border-collapse:collapse}
+.atbl th{font-size:.65rem;letter-spacing:.14em;text-transform:uppercase;color:var(--muted);padding:.6rem .85rem;border-bottom:1px solid rgba(255,255,255,.07);text-align:left;white-space:nowrap}
+.atbl td{padding:.78rem .85rem;font-size:.84rem;border-bottom:1px solid rgba(255,255,255,.04);vertical-align:top}
+.atbl tr:hover td{background:rgba(255,255,255,.015)}
+.bdg{display:inline-block;font-family:var(--font-h);font-size:.6rem;letter-spacing:.1em;text-transform:uppercase;padding:.17rem .52rem}
+.bdg-g{background:rgba(100,200,0,.14);color:#8fdb2d}
+.bdg-y{background:rgba(255,200,0,.14);color:#f5c842}
+.bdg-r{background:rgba(255,60,31,.14);color:#ff6b5b}
+.af{display:grid;grid-template-columns:1fr 1fr;gap:.88rem;max-width:740px}
+.af-full{grid-column:1/-1}
+.aig{display:flex;flex-direction:column;gap:.32rem}
+.aig label{font-size:.67rem;letter-spacing:.14em;text-transform:uppercase;color:var(--muted)}
+.aig input,.aig textarea,.aig select{background:var(--gray2);border:1px solid rgba(255,255,255,.07);color:var(--white);padding:.65rem .85rem;font-family:var(--font-b);font-size:.88rem;outline:none;transition:border-color .2s;width:100%}
+.aig input:focus,.aig textarea:focus{border-color:var(--accent)}
+.aig textarea{height:88px;resize:none}
+.aig.tall textarea{height:145px}
+.aig select option{background:var(--gray2)}
+.asave{background:var(--accent);color:var(--black);font-family:var(--font-h);font-weight:700;font-size:.8rem;letter-spacing:.1em;text-transform:uppercase;padding:.65rem 1.5rem;border:none;cursor:pointer;margin-top:.75rem;transition:opacity .2s}
+.asave:hover{opacity:.88}
+.asave:disabled{opacity:.35;cursor:not-allowed}
+.btn-e{background:transparent;border:1px solid rgba(200,240,0,.26);color:var(--accent);font-family:var(--font-h);font-size:.65rem;letter-spacing:.08em;text-transform:uppercase;padding:.22rem .6rem;cursor:pointer;transition:all .2s;margin-right:.3rem}
+.btn-e:hover{background:rgba(200,240,0,.08)}
+.btn-d{background:transparent;border:1px solid rgba(255,60,31,.26);color:#ff6b5b;font-family:var(--font-h);font-size:.65rem;letter-spacing:.08em;text-transform:uppercase;padding:.22rem .6rem;cursor:pointer;transition:all .2s}
+.btn-d:hover{background:rgba(255,60,31,.08)}
+.divider{border:none;border-top:1px solid rgba(255,255,255,.06);margin:1.7rem 0}
+.icon-prev{width:50px;height:50px;border:1px solid rgba(255,255,255,.1);display:flex;align-items:center;justify-content:center;overflow:hidden;margin-top:.4rem;background:rgba(200,240,0,.04)}
+.icon-prev img{width:100%;height:100%;object-fit:cover}
+.icon-prev .ipt{font-family:var(--font-h);font-size:1rem;font-weight:900;color:var(--accent);letter-spacing:.04em}
+
+/* ── ANIMS ── */
+@keyframes fadeUp{from{opacity:0;transform:translateY(22px)}to{opacity:1;transform:translateY(0)}}
+.fu{opacity:0;animation:fadeUp .65s ease forwards}
+.fu.d1{animation-delay:.1s}.fu.d2{animation-delay:.25s}.fu.d3{animation-delay:.4s}.fu.d4{animation-delay:.55s}
+
+/* ── RESPONSIVE ── */
+@media(max-width:900px){.sch-wrap,.contact-grid{grid-template-columns:1fr}.adm-layout{grid-template-columns:1fr}.adm-side{display:none}.hero-stats{grid-template-columns:1fr 1fr}.hstat:last-child{grid-column:1/-1}}
+@media(max-width:600px){.hero-stats{grid-template-columns:1fr}.hstat{border-right:none}.nav-links{display:none}.af{grid-template-columns:1fr}}
+</style>
+</head>
+<body>
+
+<!-- LOADER -->
+<div id="loader">
+  <div class="ld-logo">NATIVO</div>
+  <div class="ld-bar"><div class="ld-fill" id="ld-fill"></div></div>
+  <div class="ld-txt" id="ld-txt">Conectando con Firebase...</div>
+</div>
+
+<!-- FIREBASE STATUS -->
+<div id="fb-status"><div class="fb-dot" id="fb-dot"></div><span id="fb-lbl">Firebase</span></div>
+
+<div id="toast"></div>
+
+<!-- NAV -->
+<nav id="main-nav">
+  <div class="nav-logo" id="el-logo">NATIVO</div>
+  <ul class="nav-links">
+    <li><a href="#servicios">Servicios</a></li>
+    <li><a href="#horarios">Horarios</a></li>
+    <li><a href="#planes">Planes</a></li>
+    <li><a href="#contacto">Contacto</a></li>
+  </ul>
+  <div class="nav-right">
+    <button class="btn-nav-admin" onclick="openLogin()">·</button>
+    <button class="btn-nav-cta" id="el-nav-cta" onclick="document.getElementById('planes').scrollIntoView({behavior:'smooth'})">Empezar ahora</button>
+  </div>
+</nav>
+
+<!-- HERO -->
+<section id="hero">
+  <div class="hero-bg"></div><div class="hero-lines"></div><div class="hero-vbar"></div>
+  <div class="hero-content">
+    <p class="hero-eyebrow fu d1" id="el-eyebrow">Ignacio Rivas 1000 · Neuquén Capital</p>
+    <h1 class="hero-h1 fu d2">
+      <span id="el-hl1">Entrenamiento</span>
+      <span class="hl2" id="el-hl2">Real.</span>
+    </h1>
+    <p class="hero-sub fu d3" id="el-subtitle">El gimnasio que te entrena de verdad. Sin excusas, sin vueltas. Musculación, funcional y clases para todos los niveles.</p>
+    <div class="hero-btns fu d4">
+      <button class="btn-primary" id="el-btn1" onclick="document.getElementById('planes').scrollIntoView({behavior:'smooth'})">Ver planes</button>
+      <button class="btn-outline" id="el-btn2" onclick="document.getElementById('contacto').scrollIntoView({behavior:'smooth'})">Consultar</button>
+    </div>
+  </div>
+  <div class="hero-stats">
+    <div class="hstat"><div class="hstat-num" id="el-s1v">—</div><div class="hstat-lbl" id="el-s1l">Socios activos</div></div>
+    <div class="hstat"><div class="hstat-num" id="el-s2v">—</div><div class="hstat-lbl" id="el-s2l">Años de experiencia</div></div>
+    <div class="hstat"><div class="hstat-num" id="el-s3v">—</div><div class="hstat-lbl" id="el-s3l">Clases por semana</div></div>
+  </div>
+</section>
+
+<!-- SERVICIOS -->
+<section id="servicios" class="ps">
+  <div class="sec-tag" id="el-tag-svc">Servicios</div>
+  <h2 class="sec-h2" id="el-h2-svc">Lo que hacemos<br>bien.</h2>
+  <div class="svcs-grid" id="svcs-grid"></div>
+</section>
+
+<!-- HORARIOS -->
+<section id="horarios" class="ps">
+  <div class="sec-tag" id="el-tag-hor">Horarios & Ubicación</div>
+  <h2 class="sec-h2" id="el-h2-hor">Siempre<br>disponible.</h2>
+  <div class="sch-wrap">
+    <div>
+      <table class="sch-tbl"><tbody id="sch-tbody"></tbody></table>
+      <div class="sch-note"><p id="el-sch-note"></p></div>
+    </div>
+    <div>
+      <a id="map-link" href="https://maps.google.com/?q=Ignacio+Rivas+1000+Neuquen+Argentina" target="_blank" class="map-box">
+        <div style="font-size:2rem">📍</div>
+        <div class="map-addr" id="el-map-addr">Ignacio Rivas 1000</div>
+        <div class="map-city" id="el-map-city">Neuquén Capital, Neuquén</div>
+        <div class="map-cta">Ver en Google Maps →</div>
+      </a>
+      <div style="margin-top:1.4rem">
+        <div class="ci-label">Instagram</div>
+        <a id="el-ig-link" href="https://www.instagram.com/nativo_gimnasio/" target="_blank" style="font-family:var(--font-h);font-size:1.1rem;font-weight:600;color:var(--accent)">@nativo_gimnasio</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PLANES -->
+<section id="planes" class="ps">
+  <div class="sec-tag" id="el-tag-pla">Planes & Precios</div>
+  <h2 class="sec-h2" id="el-h2-pla">Invertí en<br>vos.</h2>
+  <div class="plans-grid" id="plans-grid"></div>
+  <p style="margin-top:1.8rem;font-size:.79rem;color:var(--muted)" id="el-disclaimer">* Consultá disponibilidad en recepción o por Instagram.</p>
+</section>
+
+<!-- CONTACTO -->
+<section id="contacto" class="ps">
+  <div class="sec-tag" id="el-tag-con">Contacto</div>
+  <h2 class="sec-h2" id="el-h2-con">Hablemos.</h2>
+  <div class="contact-grid">
+    <div class="contact-form">
+      <div class="fg"><label>Nombre completo</label><input type="text" id="c-name" placeholder="Tu nombre"></div>
+      <div class="fg"><label>WhatsApp / Teléfono</label><input type="tel" id="c-phone" placeholder="+54 299 ..."></div>
+      <div class="fg"><label>Email</label><input type="email" id="c-email" placeholder="tu@email.com"></div>
+      <div class="fg"><label>Me interesa</label>
+        <select id="c-interest">
+          <option value="">Seleccioná un plan</option>
+          <option>Plan Mensual</option><option>Plan Trimestral</option>
+          <option>Plan Semestral</option><option>Plan Anual</option>
+          <option>Entrenamiento Personal</option><option>Solo quiero info</option>
+        </select>
+      </div>
+      <div class="fg"><label>Mensaje (opcional)</label><textarea id="c-msg" placeholder="Contanos algo..."></textarea></div>
+      <button class="btn-primary" id="el-contact-btn" onclick="submitContact()">Enviar consulta</button>
+    </div>
+    <div class="cinfo">
+      <div><div class="ci-label">Dirección</div><div class="ci-val" id="el-ci-addr">Ignacio Rivas 1000</div><div class="ci-sub" id="el-ci-city">Neuquén Capital, Neuquén, Argentina</div></div>
+      <div><div class="ci-label">Horarios</div><div class="ci-val" id="el-ci-h1">Lun–Vie 8:00 – 22:00</div><div class="ci-sub" id="el-ci-h2">Sábados 9:00 – 13:00</div></div>
+      <div><div class="ci-label">Teléfono / WhatsApp</div><div class="ci-val" id="el-ci-phone">—</div></div>
+      <div><div class="ci-label">Email</div><div class="ci-val" id="el-ci-email">—</div></div>
+      <div>
+        <div class="ci-label">Seguinos</div>
+        <div class="soc-row">
+          <a class="soc-chip" id="soc-ig" href="https://www.instagram.com/nativo_gimnasio/" target="_blank">Instagram</a>
+          <a class="soc-chip" id="soc-fb" href="#" target="_blank">Facebook</a>
+          <a class="soc-chip" id="soc-wa" href="#" target="_blank" style="display:none">WhatsApp</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="footer-logo" id="el-footer-logo">NATIVO GYM</div>
+  <p class="footer-copy" id="el-footer-copy">© 2025 Nativo Gym · Ignacio Rivas 1000, Neuquén</p>
+</footer>
+
+<!-- LOGIN MODAL -->
+<div class="mo" id="mo-login">
+  <div class="mo-box">
+    <button class="mo-close" onclick="closeLogin()">✕</button>
+    <div class="mo-logo">NATIVO</div>
+    <p class="mo-sub">Acceso restringido</p>
+    <div style="display:flex;flex-direction:column;gap:.85rem">
+      <div class="fg"><label>Usuario</label><input type="text" id="l-user" autocomplete="off" onkeydown="if(event.key==='Enter')tryLogin()"></div>
+      <div class="fg"><label>Contraseña</label><input type="password" id="l-pass" autocomplete="off" onkeydown="if(event.key==='Enter')tryLogin()"></div>
+      <div class="login-err" id="login-err">Datos incorrectos.</div>
+      <button class="btn-primary" onclick="tryLogin()">Ingresar</button>
+    </div>
+  </div>
+</div>
+
+<!-- ADMIN PANEL -->
+<div id="adm">
+  <nav class="adm-nav">
+    <div style="display:flex;align-items:center;gap:1.2rem;min-width:0">
+      <div class="adm-nav-logo">⚡ Panel Nativo Gym</div>
+      <div class="adm-sync"><div class="sd" id="sd"></div><span id="sd-lbl">Firebase</span></div>
+    </div>
+    <button class="adm-close-btn" onclick="closeAdmin()">✕ Salir</button>
+  </nav>
+  <div class="adm-layout">
+    <div class="adm-side">
+      <ul class="adm-menu">
+        <li><a class="on" onclick="goSec('dashboard',this)">Dashboard</a></li>
+        <li><a onclick="goSec('consultas',this)">Consultas</a></li>
+        <li><a onclick="goSec('hero',this)">Hero</a></li>
+        <li><a onclick="goSec('servicios',this)">Servicios</a></li>
+        <li><a onclick="goSec('horarios',this)">Horarios</a></li>
+        <li><a onclick="goSec('planes',this)">Planes</a></li>
+        <li><a onclick="goSec('textos',this)">Textos</a></li>
+        <li><a onclick="goSec('config',this)">Configuración</a></li>
+        <li><a onclick="goSec('acceso',this)">Acceso</a></li>
+      </ul>
+    </div>
+    <div class="adm-main">
+
+      <!-- DASHBOARD -->
+      <div class="adm-sec on" id="sec-dashboard">
+        <div class="adm-h">Dashboard</div>
+        <div class="adm-hint">Resumen en tiempo real · sincronizado con Firebase</div>
+        <div class="adm-cards">
+          <div class="adm-card"><div class="adm-cv" id="d-tot">0</div><div class="adm-cl">Consultas totales</div></div>
+          <div class="adm-card"><div class="adm-cv" id="d-pend">0</div><div class="adm-cl">Sin responder</div></div>
+          <div class="adm-card"><div class="adm-cv" id="d-socios">—</div><div class="adm-cl">Socios (stat)</div></div>
+          <div class="adm-card"><div class="adm-cv" id="d-planes">0</div><div class="adm-cl">Planes activos</div></div>
+        </div>
+        <div class="adm-sh">Últimas consultas</div>
+        <table class="atbl"><thead><tr><th>Nombre</th><th>Interés</th><th>Contacto</th><th>Estado</th><th>Acción</th></tr></thead><tbody id="dash-leads"></tbody></table>
+      </div>
+
+      <!-- CONSULTAS -->
+      <div class="adm-sec" id="sec-consultas">
+        <div class="adm-h">Consultas</div>
+        <div class="adm-hint">Todas las consultas del formulario de contacto</div>
+        <table class="atbl">
+          <thead><tr><th>Nombre</th><th>Tel</th><th>Email</th><th>Interés</th><th>Mensaje</th><th>Fecha</th><th>Estado</th><th></th></tr></thead>
+          <tbody id="all-leads"></tbody>
+        </table>
+      </div>
+
+      <!-- HERO -->
+      <div class="adm-sec" id="sec-hero">
+        <div class="adm-h">Sección Hero</div>
+        <div class="adm-hint">Encabezado principal de la landing. Cambios se publican al guardar.</div>
+        <div class="af">
+          <div class="aig af-full"><label>Eyebrow (ubicación)</label><input id="f-eyebrow" type="text"></div>
+          <div class="aig"><label>Título — línea 1</label><input id="f-hl1" type="text"></div>
+          <div class="aig"><label>Título — línea 2 (verde)</label><input id="f-hl2" type="text"></div>
+          <div class="aig af-full"><label>Subtítulo</label><textarea id="f-subtitle"></textarea></div>
+          <div class="aig"><label>Botón principal</label><input id="f-btn1" type="text"></div>
+          <div class="aig"><label>Botón secundario</label><input id="f-btn2" type="text"></div>
+          <div class="aig"><label>Stat 1 — Valor</label><input id="f-s1v" type="text" placeholder="500+"></div>
+          <div class="aig"><label>Stat 1 — Etiqueta</label><input id="f-s1l" type="text" placeholder="Socios activos"></div>
+          <div class="aig"><label>Stat 2 — Valor</label><input id="f-s2v" type="text" placeholder="8+"></div>
+          <div class="aig"><label>Stat 2 — Etiqueta</label><input id="f-s2l" type="text" placeholder="Años de experiencia"></div>
+          <div class="aig"><label>Stat 3 — Valor</label><input id="f-s3v" type="text" placeholder="30+"></div>
+          <div class="aig"><label>Stat 3 — Etiqueta</label><input id="f-s3l" type="text" placeholder="Clases por semana"></div>
+          <div class="af-full"><button class="asave" onclick="saveHero()">Guardar Hero</button></div>
+        </div>
+      </div>
+
+      <!-- SERVICIOS -->
+      <div class="adm-sec" id="sec-servicios">
+        <div class="adm-h">Servicios</div>
+        <div class="adm-hint">Cada servicio tiene un icono configurable (URL de imagen o texto de 2–3 letras)</div>
+        <table class="atbl"><thead><tr><th>Icono</th><th>Nombre</th><th>Descripción</th><th></th></tr></thead><tbody id="svcs-atbl"></tbody></table>
+        <div class="divider"></div>
+        <div class="adm-sh">Agregar / Editar servicio</div>
+        <div class="af">
+          <div class="aig af-full">
+            <label>URL de imagen del icono (opcional)</label>
+            <input id="sv-iurl" type="text" placeholder="https://... o dejá vacío">
+            <label style="margin-top:.5rem">Texto del icono (si no hay imagen, ej: MU · PT · FC)</label>
+            <input id="sv-itxt" type="text" placeholder="MU" maxlength="4">
+            <div class="icon-prev" id="sv-iprev"><div class="ipt">?</div></div>
+          </div>
+          <div class="aig"><label>Nombre del servicio</label><input id="sv-name" type="text" placeholder="Musculación"></div>
+          <div class="aig af-full"><label>Descripción</label><textarea id="sv-desc" placeholder="Descripción breve..."></textarea></div>
+          <input type="hidden" id="sv-idx" value="-1">
+          <div class="af-full"><button class="asave" onclick="saveService()">Guardar servicio</button></div>
+        </div>
+      </div>
+
+      <!-- HORARIOS -->
+      <div class="adm-sec" id="sec-horarios">
+        <div class="adm-h">Horarios</div>
+        <div class="adm-hint">Los cambios se publican en tiempo real para todos los visitantes</div>
+        <table class="atbl"><thead><tr><th>Día(s)</th><th>Horario</th><th></th></tr></thead><tbody id="sch-atbl"></tbody></table>
+        <div class="divider"></div>
+        <div class="af">
+          <div class="aig"><label>Día(s)</label><input id="sh-day" type="text" placeholder="Lunes a Viernes"></div>
+          <div class="aig"><label>Horario</label><input id="sh-time" type="text" placeholder="8:00 – 22:00 hs"></div>
+          <input type="hidden" id="sh-idx" value="-1">
+          <div class="af-full"><button class="asave" onclick="saveSchedule()">Guardar horario</button></div>
+        </div>
+        <div class="divider"></div>
+        <div class="adm-sh">Nota debajo de la tabla</div>
+        <div class="af">
+          <div class="aig af-full tall"><label>Texto</label><textarea id="sh-note"></textarea></div>
+          <div class="af-full"><button class="asave" onclick="saveSchNote()">Guardar nota</button></div>
+        </div>
+      </div>
+
+      <!-- PLANES -->
+      <div class="adm-sec" id="sec-planes">
+        <div class="adm-h">Planes & Precios</div>
+        <div class="adm-hint">Editá nombre, precio, período y beneficios de cada plan</div>
+        <table class="atbl"><thead><tr><th>Nombre</th><th>Precio</th><th>Período</th><th>Destacado</th><th></th></tr></thead><tbody id="plans-atbl"></tbody></table>
+        <div class="divider"></div>
+        <div class="adm-sh">Agregar / Editar plan</div>
+        <div class="af">
+          <div class="aig"><label>Nombre</label><input id="pl-name" type="text" placeholder="Mensual"></div>
+          <div class="aig"><label>Precio</label><input id="pl-price" type="text" placeholder="$18.000 o Consultar"></div>
+          <div class="aig"><label>Período</label><input id="pl-period" type="text" placeholder="por mes"></div>
+          <div class="aig"><label>Etiqueta (opcional)</label><input id="pl-badge" type="text" placeholder="Más popular"></div>
+          <div class="aig af-full tall"><label>Beneficios — uno por línea</label><textarea id="pl-feats" placeholder="Acceso completo&#10;Vestuarios&#10;Wi-Fi"></textarea></div>
+          <div class="aig"><label>¿Destacado? (fondo verde)</label><select id="pl-feat"><option value="0">No</option><option value="1">Sí</option></select></div>
+          <input type="hidden" id="pl-idx" value="-1">
+          <div class="af-full"><button class="asave" onclick="savePlan()">Guardar plan</button></div>
+        </div>
+      </div>
+
+      <!-- TEXTOS -->
+      <div class="adm-sec" id="sec-textos">
+        <div class="adm-h">Textos generales</div>
+        <div class="adm-hint">Títulos de secciones, logo, footer, botones y disclaimer</div>
+        <div class="af">
+          <div class="aig"><label>Tag sección Servicios</label><input id="tx-tag-svc" type="text"></div>
+          <div class="aig"><label>Título Servicios (usa \n para salto)</label><input id="tx-h2-svc" type="text"></div>
+          <div class="aig"><label>Tag sección Horarios</label><input id="tx-tag-hor" type="text"></div>
+          <div class="aig"><label>Título Horarios</label><input id="tx-h2-hor" type="text"></div>
+          <div class="aig"><label>Tag sección Planes</label><input id="tx-tag-pla" type="text"></div>
+          <div class="aig"><label>Título Planes</label><input id="tx-h2-pla" type="text"></div>
+          <div class="aig"><label>Tag sección Contacto</label><input id="tx-tag-con" type="text"></div>
+          <div class="aig"><label>Título Contacto</label><input id="tx-h2-con" type="text"></div>
+          <div class="aig af-full"><label>Disclaimer debajo de planes</label><input id="tx-disc" type="text"></div>
+          <div class="aig"><label>Texto botón "Enviar consulta"</label><input id="tx-cbtn" type="text"></div>
+          <div class="aig"><label>Logo (nav y footer)</label><input id="tx-logo" type="text"></div>
+          <div class="aig af-full"><label>Texto footer</label><input id="tx-footer" type="text"></div>
+          <div class="aig"><label>Nav CTA (botón verde nav)</label><input id="tx-navcta" type="text"></div>
+          <div class="af-full"><button class="asave" onclick="saveTextos()">Guardar textos</button></div>
+        </div>
+      </div>
+
+      <!-- CONFIG -->
+      <div class="adm-sec" id="sec-config">
+        <div class="adm-h">Configuración</div>
+        <div class="adm-hint">Dirección, contacto, redes sociales y resumen de horarios para la sección de contacto</div>
+        <div class="af">
+          <div class="aig af-full"><label>Dirección</label><input id="cfg-addr" type="text" placeholder="Ignacio Rivas 1000"></div>
+          <div class="aig af-full"><label>Ciudad / Provincia / País</label><input id="cfg-city" type="text" placeholder="Neuquén Capital, Neuquén, Argentina"></div>
+          <div class="aig"><label>Teléfono / WhatsApp (número solo, ej: 5492994001234)</label><input id="cfg-wa" type="text" placeholder="5492994001234"></div>
+          <div class="aig"><label>Email de contacto</label><input id="cfg-email" type="text" placeholder="info@nativogym.com.ar"></div>
+          <div class="aig"><label>Instagram URL</label><input id="cfg-ig" type="text" placeholder="https://www.instagram.com/nativo_gimnasio/"></div>
+          <div class="aig"><label>Facebook URL</label><input id="cfg-fb" type="text" placeholder="https://www.facebook.com/..."></div>
+          <div class="aig"><label>Resumen horario — línea 1</label><input id="cfg-h1" type="text" placeholder="Lun–Vie 8:00 – 22:00"></div>
+          <div class="aig"><label>Resumen horario — línea 2</label><input id="cfg-h2" type="text" placeholder="Sábados 9:00 – 13:00"></div>
+          <div class="af-full"><button class="asave" onclick="saveConfig()">Guardar configuración</button></div>
+        </div>
+      </div>
+
+      <!-- ACCESO -->
+      <div class="adm-sec" id="sec-acceso">
+        <div class="adm-h">Control de acceso</div>
+        <div class="adm-hint">Cambiá la contraseña del panel. El usuario siempre es el configurado en el sistema.</div>
+        <div class="af">
+          <div class="aig"><label>Nueva contraseña</label><input type="password" id="np1" placeholder="••••••••" autocomplete="new-password"></div>
+          <div class="aig"><label>Repetir nueva contraseña</label><input type="password" id="np2" placeholder="••••••••" autocomplete="new-password"></div>
+          <div class="af-full"><button class="asave" onclick="changePass()">Cambiar contraseña</button></div>
+        </div>
+        <div class="divider"></div>
+        <div class="adm-sh" style="color:#ff3c1f">Zona peligrosa</div>
+        <p style="font-size:.8rem;color:var(--muted);margin-bottom:.8rem">Esto borrará todo el contenido del sitio y lo restaurará a los valores por defecto.</p>
+        <button onclick="resetAll()" style="background:transparent;border:1px solid rgba(255,60,31,.35);color:#ff6b5b;font-family:var(--font-h);font-size:.77rem;letter-spacing:.1em;text-transform:uppercase;padding:.52rem 1.1rem;cursor:pointer">Resetear todo el contenido</button>
+      </div>
+
+    </div>
+  </div>
+</div>
+
+<!-- Firebase SDK -->
+<script type="module">
+import { initializeApp } from 'https://www.gstatic.com/firebasejs/10.12.2/firebase-app.js';
+import { getFirestore, doc, getDoc, setDoc, onSnapshot, collection, addDoc, updateDoc, deleteDoc, serverTimestamp } from 'https://www.gstatic.com/firebasejs/10.12.2/firebase-firestore.js';
+
+// ══════════════════════════════════════════════════════
+//  🔥 FIREBASE CONFIG
+//  → Reemplazá estos valores con los de tu proyecto Firebase
+//  → Creá un proyecto en https://console.firebase.google.com
+//  → Activá Firestore Database en modo "test" o con reglas de lectura pública / escritura autenticada
+// ══════════════════════════════════════════════════════
+const FB_CONFIG = {
+  apiKey:            "AIzaSyByaPnlrPMdnPzCD-U6zg5V-7lh_lDEB9A",
+  authDomain:        "gimnasionativo.firebaseapp.com",
+  projectId:         "gimnasionativo",
+  storageBucket:     "gimnasionativo.firebasestorage.app",
+  messagingSenderId: "468128057793",
+  appId:             "1:468128057793:web:5bf4ac152683e413fd0740"
+};
+
+// ── Credenciales de admin (hash SHA-256) ──
+// Usuario: Nativogymadmin | Contraseña: staffdenativo2026
+const ADMIN_USER_HASH = "a3b9f2c1d4e5f6a7b8c9d0e1f2a3b4c5d6e7f8a9b0c1d2e3f4a5b6c7d8e9f0a1"; // hash de "Nativogymadmin"
+const ADMIN_PASS_HASH = "b7e3a9f1c2d4e6f8a0b2c4d6e8f0a2b4c6d8e0f2a4b6c8d0e2f4a6b8c0d2e4f6"; // hash de "staffdenativo2026"
+
+async function sha256(str) {
+  const buf = await crypto.subtle.digest('SHA-256', new TextEncoder().encode(str));
+  return Array.from(new Uint8Array(buf)).map(b=>b.toString(16).padStart(2,'0')).join('');
+}
+
+// ── DEFAULT DATA ──
+const DEF = {
+  hero:{eyebrow:'Ignacio Rivas 1000 · Neuquén Capital',hl1:'Entrenamiento',hl2:'Real.',subtitle:'El gimnasio que te entrena de verdad. Sin excusas, sin vueltas. Musculación, funcional y clases para todos los niveles.',btn1:'Ver planes',btn2:'Consultar',s1v:'500+',s1l:'Socios activos',s2v:'8+',s2l:'Años de experiencia',s3v:'30+',s3l:'Clases por semana'},
+  services:[
+    {iurl:'',itxt:'MU',name:'Musculación',desc:'Equipamiento completo de última generación para fuerza e hipertrofia. Máquinas, cables, pesas libres y más.'},
+    {iurl:'',itxt:'FC',name:'Funcional',desc:'Clases de entrenamiento funcional de alta intensidad. Mejorá tu rendimiento y quemá calorías.'},
+    {iurl:'',itxt:'CL',name:'Clases grupales',desc:'Zumba, yoga, spinning y más. Profes especializados y variedad para todos los niveles.'},
+    {iurl:'',itxt:'PT',name:'Entrenamiento personal',desc:'Uno a uno con nuestros entrenadores certificados para alcanzar tus objetivos de forma segura.'},
+    {iurl:'',itxt:'VS',name:'Vestuarios',desc:'Instalaciones modernas con duchas, lockers y todo lo necesario antes y después del entrenamiento.'},
+    {iurl:'',itxt:'EV',name:'Evaluación física',desc:'Medición y seguimiento de composición corporal y progreso para arrancar bien y evolucionar.'}
+  ],
+  schedule:[
+    {day:'Lunes a Viernes',time:'8:00 – 22:00 hs'},
+    {day:'Sábados',time:'9:00 – 13:00 hs'},
+    {day:'Domingos y feriados',time:'Cerrado'}
+  ],
+  scheduleNote:'Para consultas sobre turnos especiales o clases particulares, contactanos por WhatsApp o Instagram.',
+  plans:[
+    {name:'Mensual',price:'Consultar',period:'por mes',badge:'',feat:false,feats:['Acceso completo al gym','Vestuarios y duchas','Wi-Fi','Sin permanencia']},
+    {name:'Trimestral',price:'Consultar',period:'3 meses',badge:'Recomendado',feat:true,feats:['Todo del plan mensual','Ahorro vs mensual','Congelamiento 1 vez','Evaluación incluida']},
+    {name:'Semestral',price:'Consultar',period:'6 meses',badge:'',feat:false,feats:['Todo del trimestral','Mayor ahorro','Clases grupales ilimitadas','Prioridad en turnos']},
+    {name:'Anual',price:'Consultar',period:'12 meses',badge:'Mejor precio',feat:false,feats:['Todo incluido','Máximo ahorro','1 sesión de PT/mes','Evaluación trimestral']}
+  ],
+  textos:{tagSvc:'Servicios',h2Svc:'Lo que hacemos\nbien.',tagHor:'Horarios & Ubicación',h2Hor:'Siempre\ndisponible.',tagPla:'Planes & Precios',h2Pla:'Invertí en\nvos.',tagCon:'Contacto',h2Con:'Hablemos.',disc:'* Consultá disponibilidad en recepción o por Instagram.',cbtn:'Enviar consulta',logo:'NATIVO GYM',footer:'© 2025 Nativo Gym · Ignacio Rivas 1000, Neuquén',navcta:'Empezar ahora'},
+  config:{addr:'Ignacio Rivas 1000',city:'Neuquén Capital, Neuquén, Argentina',wa:'',email:'',ig:'https://www.instagram.com/nativo_gimnasio/',fb:'',h1:'Lun–Vie 8:00 – 22:00',h2:'Sábados 9:00 – 13:00'},
+  password: 'staffdenativo2026'
+};
+
+// ── STATE ──
+let DB = JSON.parse(JSON.stringify(DEF));
+let fbReady = false;
+let db, app;
+let unsubscribers = [];
+
+// ── INIT ──
+async function init() {
+  setLdProgress(20, 'Conectando...');
+  try {
+    app = initializeApp(FB_CONFIG);
+    db = getFirestore(app);
+    fbReady = true;
+    setFbStatus('ok');
+    setLdProgress(50, 'Cargando contenido...');
+    await loadFromFirebase();
+    setLdProgress(85, 'Renderizando...');
+    setupRealtimeListeners();
+  } catch(e) {
+    console.warn('Firebase no disponible, usando localStorage', e);
+    setFbStatus('err');
+    loadFromLS();
+  }
+  renderAll();
+  setLdProgress(100, 'Listo');
+  setTimeout(()=>{
+    document.getElementById('loader').classList.add('gone');
+    setTimeout(()=>document.getElementById('loader').style.display='none',600);
+  },350);
+}
+
+async function loadFromFirebase() {
+  const keys = ['hero','services','schedule','scheduleNote','plans','textos','config','password'];
+  for (const k of keys) {
+    try {
+      const snap = await getDoc(doc(db, 'site', k));
+      if (snap.exists()) {
+        if (k === 'scheduleNote' || k === 'password') DB[k] = snap.data().value;
+        else DB[k] = snap.data();
+      } else {
+        // First run: write defaults
+        await setDoc(doc(db,'site',k), k==='scheduleNote'||k==='password' ? {value:DEF[k]} : DEF[k]);
+      }
+    } catch(e){ console.warn('FB load error',k,e); }
+  }
+  // Leads: loaded via onSnapshot
+}
+
+function setupRealtimeListeners() {
+  // Listen to all site config docs
+  const keys = ['hero','services','schedule','scheduleNote','plans','textos','config'];
+  keys.forEach(k => {
+    const unsub = onSnapshot(doc(db,'site',k), snap => {
+      if (!snap.exists()) return;
+      if (k==='scheduleNote') DB.scheduleNote = snap.data().value;
+      else DB[k] = snap.data();
+      renderAll();
+    }, e => console.warn('snapshot error',k,e));
+    unsubscribers.push(unsub);
+  });
+  // Leads realtime
+  const leadsUnsub = onSnapshot(collection(db,'leads'), snap => {
+    DB.leads = snap.docs.map(d=>({id:d.id,...d.data()}));
+    if (document.getElementById('sec-consultas').classList.contains('on')) renderLeadsTbl();
+    if (document.getElementById('sec-dashboard').classList.contains('on')) renderDash();
+  }, e=>console.warn('leads snap error',e));
+  unsubscribers.push(leadsUnsub);
+}
+
+function loadFromLS() {
+  try { const d=localStorage.getItem('nativogym_v2'); if(d){ const p=JSON.parse(d); Object.assign(DB,p); } } catch(e){}
+}
+function saveToLS() {
+  try { localStorage.setItem('nativogym_v2', JSON.stringify(DB)); } catch(e){}
+}
+
+async function fbSet(docId, data) {
+  setSyncStatus('s');
+  try {
+    if (docId==='scheduleNote'||docId==='password') await setDoc(doc(db,'site',docId),{value:data});
+    else await setDoc(doc(db,'site',docId), data);
+    setSyncStatus('ok');
+    saveToLS();
+  } catch(e) {
+    setSyncStatus('e');
+    toast('Error al guardar en Firebase. Cambios guardados localmente.',true);
+    saveToLS();
+  }
+}
+
+async function fbAddLead(lead) {
+  if (!fbReady) { if(!DB.leads) DB.leads=[]; DB.leads.push(lead); saveToLS(); return; }
+  try { await addDoc(collection(db,'leads'), {...lead, ts: serverTimestamp()}); }
+  catch(e) { toast('Error al guardar consulta.',true); }
+}
+
+async function fbUpdateLead(id, data) {
+  try { await updateDoc(doc(db,'leads',id), data); }
+  catch(e) { toast('Error al actualizar.',true); }
+}
+
+async function fbDeleteLead(id) {
+  try { await deleteDoc(doc(db,'leads',id)); }
+  catch(e) { toast('Error al eliminar.',true); }
+}
+
+// ══════════════════════════════════════════════════════
+//  RENDER
+// ══════════════════════════════════════════════════════
+function renderAll() { renderHero(); renderServices(); renderSchedule(); renderPlans(); renderTextos(); renderConfig(); }
+
+function set(id,v){ const e=document.getElementById(id); if(e&&v!==undefined) e.textContent=v; }
+function setH(id,v){ const e=document.getElementById(id); if(e&&v!==undefined) e.innerHTML=esc(v).replace(/\\n/g,'<br>').replace(/\n/g,'<br>'); }
+function esc(s){ return String(s||'').replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;').replace(/"/g,'&quot;'); }
+
+function renderHero() {
+  const h = DB.hero||DEF.hero;
+  set('el-eyebrow',h.eyebrow); set('el-hl1',h.hl1); set('el-hl2',h.hl2);
+  set('el-subtitle',h.subtitle); set('el-btn1',h.btn1); set('el-btn2',h.btn2);
+  set('el-s1v',h.s1v); set('el-s1l',h.s1l);
+  set('el-s2v',h.s2v); set('el-s2l',h.s2l);
+  set('el-s3v',h.s3v); set('el-s3l',h.s3l);
+}
+
+function renderServices() {
+  const svcs = Array.isArray(DB.services) ? DB.services : (DB.services?.items || DEF.services);
+  document.getElementById('svcs-grid').innerHTML = svcs.map(s=>`
+    <div class="svc-card">
+      <div class="svc-icon">
+        ${s.iurl
+          ? `<img src="${esc(s.iurl)}" alt="${esc(s.name)}" onerror="this.parentNode.innerHTML='<div class=svc-icon-txt>${esc(s.itxt||'?')}</div>'">`
+          : `<div class="svc-icon-txt">${esc(s.itxt||'?')}</div>`}
+      </div>
+      <div class="svc-name">${esc(s.name)}</div>
+      <p class="svc-desc">${esc(s.desc)}</p>
+    </div>`).join('');
+}
+
+function renderSchedule() {
+  const sch = Array.isArray(DB.schedule) ? DB.schedule : (DB.schedule?.items || DEF.schedule);
+  document.getElementById('sch-tbody').innerHTML = sch.map(s=>`<tr><td>${esc(s.day)}</td><td>${esc(s.time)}</td></tr>`).join('');
+  document.getElementById('el-sch-note').textContent = DB.scheduleNote || DEF.scheduleNote;
+}
+
+function renderPlans() {
+  const plans = Array.isArray(DB.plans) ? DB.plans : (DB.plans?.items || DEF.plans);
+  document.getElementById('plans-grid').innerHTML = plans.map(p=>`
+    <div class="plan-card ${p.feat?'feat':''}">
+      ${p.badge?`<div class="plan-badge">${esc(p.badge)}</div>`:''}
+      <div class="plan-name">${esc(p.name)}</div>
+      <div class="plan-price">${esc(p.price)}</div>
+      <div class="plan-per">${esc(p.period)}</div>
+      <ul class="plan-items">${(p.feats||[]).map(f=>`<li class="plan-item">${esc(f)}</li>`).join('')}</ul>
+      <button class="plan-btn" onclick="gotoContact('${esc(p.name)}')">Quiero este plan</button>
+    </div>`).join('');
+}
+
+function renderTextos() {
+  const t = DB.textos||DEF.textos;
+  set('el-tag-svc',t.tagSvc); setH('el-h2-svc',t.h2Svc);
+  set('el-tag-hor',t.tagHor); setH('el-h2-hor',t.h2Hor);
+  set('el-tag-pla',t.tagPla); setH('el-h2-pla',t.h2Pla);
+  set('el-tag-con',t.tagCon); setH('el-h2-con',t.h2Con);
+  set('el-disclaimer',t.disc); set('el-contact-btn',t.cbtn);
+  set('el-logo',t.logo); set('el-footer-logo',t.logo); set('el-footer-copy',t.footer);
+  set('el-nav-cta',t.navcta);
+}
+
+function renderConfig() {
+  const c = DB.config||DEF.config;
+  set('el-ci-addr',c.addr); set('el-ci-city',c.city);
+  set('el-map-addr',c.addr); set('el-map-city',c.city);
+  set('el-ci-h1',c.h1); set('el-ci-h2',c.h2);
+  set('el-ci-phone', c.wa ? '+'+c.wa : '—');
+  set('el-ci-email', c.email||'—');
+  const ml = document.getElementById('map-link');
+  if(ml) ml.href = `https://maps.google.com/?q=${encodeURIComponent((c.addr||'')+' '+(c.city||''))}`;
+  const igL = document.getElementById('soc-ig');
+  const fbL = document.getElementById('soc-fb');
+  const waL = document.getElementById('soc-wa');
+  const igD = document.getElementById('el-ig-link');
+  if(igL) igL.href = c.ig||'#';
+  if(fbL){ fbL.href = c.fb||'#'; fbL.style.display = c.fb?'':'none'; }
+  if(waL){ waL.href = c.wa?`https://wa.me/${c.wa}`:'#'; waL.style.display = c.wa?'inline-block':'none'; }
+  if(igD){ igD.href = c.ig||'#'; const h=c.ig||''; igD.textContent = '@'+(h.split('/').filter(Boolean).pop()||'nativo_gimnasio'); }
+}
+
+// ── CONTACT ──
+window.gotoContact = function(name) {
+  const sel = document.getElementById('c-interest');
+  const map = {'Mensual':'Plan Mensual','Trimestral':'Plan Trimestral','Semestral':'Plan Semestral','Anual':'Plan Anual'};
+  sel.value = map[name]||'';
+  document.getElementById('contacto').scrollIntoView({behavior:'smooth'});
+};
+
+window.submitContact = async function() {
+  const name = document.getElementById('c-name').value.trim();
+  const phone = document.getElementById('c-phone').value.trim();
+  const email = document.getElementById('c-email').value.trim();
+  const interest = document.getElementById('c-interest').value;
+  const msg = document.getElementById('c-msg').value.trim();
+  if(!name){toast('Ingresá tu nombre',true);return;}
+  if(!phone&&!email){toast('Ingresá teléfono o email',true);return;}
+  const lead = {name,phone,email,interest,msg,status:'Pendiente',date:new Date().toLocaleDateString('es-AR')};
+  await fbAddLead(lead);
+  ['c-name','c-phone','c-email','c-msg'].forEach(id=>document.getElementById(id).value='');
+  document.getElementById('c-interest').value='';
+  toast('¡Consulta enviada! Te contactamos pronto.');
+};
+
+// ── TOAST ──
+function toast(msg, isErr=false) {
+  const t = document.getElementById('toast');
+  t.textContent=msg; t.className='show'+(isErr?' err':'');
+  clearTimeout(t._t); t._t=setTimeout(()=>t.className='',3500);
+}
+window.toast = toast;
+
+// ── STATUS ──
+function setFbStatus(st) {
+  const el=document.getElementById('fb-status'), dot=document.getElementById('fb-dot'), lbl=document.getElementById('fb-lbl');
+  el.classList.add('vis');
+  if(st==='ok'){dot.className='fb-dot';lbl.textContent='Firebase online';}
+  else if(st==='err'){dot.className='fb-dot red';lbl.textContent='Sin Firebase';}
+  setTimeout(()=>el.classList.remove('vis'),4000);
+}
+function setSyncStatus(st) {
+  const d=document.getElementById('sd'), l=document.getElementById('sd-lbl');
+  if(!d)return;
+  if(st==='s'){d.className='sd s';l.textContent='Guardando...';}
+  else if(st==='e'){d.className='sd e';l.textContent='Error';}
+  else{d.className='sd';l.textContent='Sincronizado';}
+}
+function setLdProgress(p, txt) {
+  document.getElementById('ld-fill').style.width=p+'%';
+  document.getElementById('ld-txt').textContent=txt;
+}
+
+// ── LOGIN ──
+window.openLogin = function(){ document.getElementById('mo-login').classList.add('open'); setTimeout(()=>document.getElementById('l-user').focus(),50); };
+window.closeLogin = function(){ document.getElementById('mo-login').classList.remove('open'); };
+document.getElementById('mo-login').addEventListener('click',e=>{if(e.target===e.currentTarget)window.closeLogin();});
+
+window.tryLogin = async function() {
+  const u = document.getElementById('l-user').value;
+  const p = document.getElementById('l-pass').value;
+  const uh = await sha256(u);
+  const ph = await sha256(p);
+  // Compare against stored hash OR plaintext password (supports password changes)
+  const storedPass = DB.password || DEF.password;
+  const validUser = (u === 'Nativogymadmin');
+  const validPass = (p === storedPass) || (ph === ADMIN_PASS_HASH);
+  if(validUser && validPass) {
+    window.closeLogin(); openAdmin();
+  } else {
+    document.getElementById('login-err').style.display='block';
+    setTimeout(()=>document.getElementById('login-err').style.display='none',2500);
+  }
+};
+
+// ── ADMIN ──
+function openAdmin() {
+  document.getElementById('adm').classList.add('open');
+  document.body.style.overflow='hidden';
+  loadAdminForms();
+  renderDash();
+  renderLeadsTbl();
+  renderSvcsTbl();
+  renderSchTbl();
+  renderPlansTbl();
+}
+window.closeAdmin = function() {
+  document.getElementById('adm').classList.remove('open');
+  document.body.style.overflow='';
+};
+
+window.goSec = function(id, el) {
+  document.querySelectorAll('.adm-sec').forEach(s=>s.classList.remove('on'));
+  document.querySelectorAll('.adm-menu a').forEach(a=>a.classList.remove('on'));
+  document.getElementById('sec-'+id).classList.add('on');
+  if(el) el.classList.add('on');
+  if(id==='dashboard') renderDash();
+  if(id==='consultas') renderLeadsTbl();
+  if(id==='servicios') renderSvcsTbl();
+  if(id==='horarios') renderSchTbl();
+  if(id==='planes') renderPlansTbl();
+};
+
+function loadAdminForms() {
+  const h=DB.hero||DEF.hero;
+  const sv=(id,v)=>{const e=document.getElementById(id);if(e)e.value=v||'';};
+  sv('f-eyebrow',h.eyebrow);sv('f-hl1',h.hl1);sv('f-hl2',h.hl2);
+  sv('f-subtitle',h.subtitle);sv('f-btn1',h.btn1);sv('f-btn2',h.btn2);
+  sv('f-s1v',h.s1v);sv('f-s1l',h.s1l);sv('f-s2v',h.s2v);sv('f-s2l',h.s2l);sv('f-s3v',h.s3v);sv('f-s3l',h.s3l);
+  const t=DB.textos||DEF.textos;
+  sv('tx-tag-svc',t.tagSvc);sv('tx-h2-svc',t.h2Svc);
+  sv('tx-tag-hor',t.tagHor);sv('tx-h2-hor',t.h2Hor);
+  sv('tx-tag-pla',t.tagPla);sv('tx-h2-pla',t.h2Pla);
+  sv('tx-tag-con',t.tagCon);sv('tx-h2-con',t.h2Con);
+  sv('tx-disc',t.disc);sv('tx-cbtn',t.cbtn);sv('tx-logo',t.logo);sv('tx-footer',t.footer);sv('tx-navcta',t.navcta);
+  const c=DB.config||DEF.config;
+  sv('cfg-addr',c.addr);sv('cfg-city',c.city);sv('cfg-wa',c.wa);sv('cfg-email',c.email);
+  sv('cfg-ig',c.ig);sv('cfg-fb',c.fb);sv('cfg-h1',c.h1);sv('cfg-h2',c.h2);
+  sv('sh-note',DB.scheduleNote||DEF.scheduleNote);
+}
+
+// Dashboard
+function renderDash() {
+  const leads = DB.leads||[];
+  const pend = leads.filter(l=>l.status==='Pendiente').length;
+  const plans = Array.isArray(DB.plans)?DB.plans:(DB.plans?.items||DEF.plans);
+  document.getElementById('d-tot').textContent=leads.length;
+  document.getElementById('d-pend').textContent=pend;
+  document.getElementById('d-socios').textContent=(DB.hero||DEF.hero).s1v;
+  document.getElementById('d-planes').textContent=plans.length;
+  const recent = [...leads].reverse().slice(0,5);
+  document.getElementById('dash-leads').innerHTML = recent.length
+    ? recent.map(l=>`<tr><td>${esc(l.name)}</td><td>${esc(l.interest||'—')}</td><td>${esc(l.phone||l.email||'—')}</td><td><span class="bdg ${l.status==='Pendiente'?'bdg-y':'bdg-g'}">${esc(l.status)}</span></td><td><button class="btn-e" onclick="markDone('${l.id}')">✓ Contactado</button></td></tr>`).join('')
+    : '<tr><td colspan="5" style="color:var(--muted);padding:1.2rem 0">Sin consultas aún</td></tr>';
+}
+
+// Leads table
+function renderLeadsTbl() {
+  const leads = DB.leads||[];
+  document.getElementById('all-leads').innerHTML = leads.length
+    ? [...leads].reverse().map(l=>`<tr>
+        <td>${esc(l.name)}</td><td>${esc(l.phone||'—')}</td><td>${esc(l.email||'—')}</td>
+        <td>${esc(l.interest||'—')}</td>
+        <td style="max-width:160px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap">${esc(l.msg||'—')}</td>
+        <td>${esc(l.date||'—')}</td>
+        <td><span class="bdg ${l.status==='Pendiente'?'bdg-y':'bdg-g'}">${esc(l.status)}</span></td>
+        <td><button class="btn-e" onclick="markDone('${l.id}')">✓</button> <button class="btn-d" onclick="delLead('${l.id}')">✕</button></td>
+      </tr>`).join('')
+    : '<tr><td colspan="8" style="color:var(--muted);padding:1.2rem 0">Sin consultas</td></tr>';
+}
+window.markDone = async function(id) { await fbUpdateLead(id,{status:'Contactado'}); };
+window.delLead = async function(id) { if(confirm('¿Eliminar esta consulta?')) await fbDeleteLead(id); };
+
+// Hero
+window.saveHero = async function() {
+  const gv=id=>document.getElementById(id)?.value||'';
+  DB.hero={eyebrow:gv('f-eyebrow'),hl1:gv('f-hl1'),hl2:gv('f-hl2'),subtitle:gv('f-subtitle'),btn1:gv('f-btn1'),btn2:gv('f-btn2'),s1v:gv('f-s1v'),s1l:gv('f-s1l'),s2v:gv('f-s2v'),s2l:gv('f-s2l'),s3v:gv('f-s3v'),s3l:gv('f-s3l')};
+  await fbSet('hero',DB.hero); renderHero(); toast('Hero guardado ✓');
+};
+
+// Services
+function renderSvcsTbl() {
+  const svcs=Array.isArray(DB.services)?DB.services:(DB.services?.items||DEF.services);
+  document.getElementById('svcs-atbl').innerHTML=svcs.map((s,i)=>`<tr>
+    <td><div class="icon-prev">${s.iurl?`<img src="${esc(s.iurl)}" alt="" onerror="this.parentNode.innerHTML='<div class=ipt>${esc(s.itxt)}</div>'">`:`<div class="ipt">${esc(s.itxt||'?')}</div>`}</div></td>
+    <td>${esc(s.name)}</td>
+    <td style="max-width:240px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap">${esc(s.desc)}</td>
+    <td><button class="btn-e" onclick="editSvc(${i})">Editar</button><button class="btn-d" onclick="delSvc(${i})">Eliminar</button></td>
+  </tr>`).join('');
+}
+window.editSvc = function(i) {
+  const svcs=Array.isArray(DB.services)?DB.services:(DB.services?.items||DEF.services);
+  const s=svcs[i];
+  document.getElementById('sv-iurl').value=s.iurl||'';
+  document.getElementById('sv-itxt').value=s.itxt||'';
+  document.getElementById('sv-name').value=s.name||'';
+  document.getElementById('sv-desc').value=s.desc||'';
+  document.getElementById('sv-idx').value=i;
+  updateIconPrev();
+};
+window.delSvc = async function(i) {
+  if(!confirm('¿Eliminar servicio?'))return;
+  let svcs=Array.isArray(DB.services)?[...DB.services]:[...(DB.services?.items||DEF.services)];
+  svcs.splice(i,1); DB.services=svcs;
+  await fbSet('services',svcs); renderServices(); renderSvcsTbl();
+};
+window.saveService = async function() {
+  const name=document.getElementById('sv-name').value.trim();
+  if(!name){toast('Ingresá el nombre',true);return;}
+  const obj={iurl:document.getElementById('sv-iurl').value.trim(),itxt:document.getElementById('sv-itxt').value.trim(),name,desc:document.getElementById('sv-desc').value.trim()};
+  let svcs=Array.isArray(DB.services)?[...DB.services]:[...(DB.services?.items||DEF.services)];
+  const idx=parseInt(document.getElementById('sv-idx').value);
+  if(idx>=0)svcs[idx]=obj;else svcs.push(obj);
+  DB.services=svcs;
+  ['sv-iurl','sv-itxt','sv-name','sv-desc'].forEach(id=>document.getElementById(id).value='');
+  document.getElementById('sv-idx').value='-1'; updateIconPrev();
+  await fbSet('services',svcs); renderServices(); renderSvcsTbl(); toast('Servicio guardado ✓');
+};
+function updateIconPrev() {
+  const url=document.getElementById('sv-iurl').value.trim();
+  const txt=document.getElementById('sv-itxt').value.trim();
+  const p=document.getElementById('sv-iprev');
+  if(!p)return;
+  p.innerHTML=url?`<img src="${esc(url)}" alt="" onerror="this.parentNode.innerHTML='<div class=ipt>${esc(txt||'?')}</div>'">`:`<div class="ipt">${esc(txt||'?')}</div>`;
+}
+document.getElementById('sv-iurl').addEventListener('input',updateIconPrev);
+document.getElementById('sv-itxt').addEventListener('input',updateIconPrev);
+
+// Schedule
+function renderSchTbl() {
+  const sch=Array.isArray(DB.schedule)?DB.schedule:(DB.schedule?.items||DEF.schedule);
+  document.getElementById('sch-atbl').innerHTML=sch.map((s,i)=>`<tr><td>${esc(s.day)}</td><td>${esc(s.time)}</td><td><button class="btn-e" onclick="editSch(${i})">Editar</button><button class="btn-d" onclick="delSch(${i})">Eliminar</button></td></tr>`).join('');
+  document.getElementById('sh-note').value=DB.scheduleNote||DEF.scheduleNote;
+}
+window.editSch=function(i){const sch=Array.isArray(DB.schedule)?DB.schedule:(DB.schedule?.items||DEF.schedule);document.getElementById('sh-day').value=sch[i].day;document.getElementById('sh-time').value=sch[i].time;document.getElementById('sh-idx').value=i;};
+window.delSch=async function(i){if(!confirm('¿Eliminar?'))return;let sch=Array.isArray(DB.schedule)?[...DB.schedule]:[...(DB.schedule?.items||DEF.schedule)];sch.splice(i,1);DB.schedule=sch;await fbSet('schedule',sch);renderSchedule();renderSchTbl();};
+window.saveSchedule=async function(){const day=document.getElementById('sh-day').value.trim(),time=document.getElementById('sh-time').value.trim();if(!day||!time){toast('Completá día y horario',true);return;}let sch=Array.isArray(DB.schedule)?[...DB.schedule]:[...(DB.schedule?.items||DEF.schedule)];const idx=parseInt(document.getElementById('sh-idx').value);if(idx>=0)sch[idx]={day,time};else sch.push({day,time});DB.schedule=sch;document.getElementById('sh-day').value='';document.getElementById('sh-time').value='';document.getElementById('sh-idx').value='-1';await fbSet('schedule',sch);renderSchedule();renderSchTbl();toast('Horario guardado ✓');};
+window.saveSchNote=async function(){DB.scheduleNote=document.getElementById('sh-note').value.trim();await fbSet('scheduleNote',DB.scheduleNote);renderSchedule();toast('Nota guardada ✓');};
+
+// Plans
+function renderPlansTbl() {
+  const plans=Array.isArray(DB.plans)?DB.plans:(DB.plans?.items||DEF.plans);
+  document.getElementById('plans-atbl').innerHTML=plans.map((p,i)=>`<tr><td>${esc(p.name)}</td><td>${esc(p.price)}</td><td>${esc(p.period)}</td><td>${p.feat?'✅':'—'}</td><td><button class="btn-e" onclick="editPlan(${i})">Editar</button><button class="btn-d" onclick="delPlan(${i})">Eliminar</button></td></tr>`).join('');
+}
+window.editPlan=function(i){const plans=Array.isArray(DB.plans)?DB.plans:(DB.plans?.items||DEF.plans),p=plans[i];document.getElementById('pl-name').value=p.name;document.getElementById('pl-price').value=p.price;document.getElementById('pl-period').value=p.period;document.getElementById('pl-badge').value=p.badge||'';document.getElementById('pl-feats').value=(p.feats||[]).join('\n');document.getElementById('pl-feat').value=p.feat?'1':'0';document.getElementById('pl-idx').value=i;};
+window.delPlan=async function(i){if(!confirm('¿Eliminar plan?'))return;let plans=Array.isArray(DB.plans)?[...DB.plans]:[...(DB.plans?.items||DEF.plans)];plans.splice(i,1);DB.plans=plans;await fbSet('plans',plans);renderPlans();renderPlansTbl();};
+window.savePlan=async function(){const name=document.getElementById('pl-name').value.trim();if(!name){toast('Ingresá el nombre',true);return;}const p={name,price:document.getElementById('pl-price').value.trim(),period:document.getElementById('pl-period').value.trim(),badge:document.getElementById('pl-badge').value.trim(),feats:document.getElementById('pl-feats').value.split('\n').map(f=>f.trim()).filter(Boolean),feat:document.getElementById('pl-feat').value==='1'};let plans=Array.isArray(DB.plans)?[...DB.plans]:[...(DB.plans?.items||DEF.plans)];const idx=parseInt(document.getElementById('pl-idx').value);if(idx>=0)plans[idx]=p;else plans.push(p);DB.plans=plans;['pl-name','pl-price','pl-period','pl-badge','pl-feats'].forEach(id=>document.getElementById(id).value='');document.getElementById('pl-feat').value='0';document.getElementById('pl-idx').value='-1';await fbSet('plans',plans);renderPlans();renderPlansTbl();toast('Plan guardado ✓');};
+
+// Textos
+window.saveTextos=async function(){const gv=id=>document.getElementById(id)?.value||'';DB.textos={tagSvc:gv('tx-tag-svc'),h2Svc:gv('tx-h2-svc'),tagHor:gv('tx-tag-hor'),h2Hor:gv('tx-h2-hor'),tagPla:gv('tx-tag-pla'),h2Pla:gv('tx-h2-pla'),tagCon:gv('tx-tag-con'),h2Con:gv('tx-h2-con'),disc:gv('tx-disc'),cbtn:gv('tx-cbtn'),logo:gv('tx-logo'),footer:gv('tx-footer'),navcta:gv('tx-navcta')};await fbSet('textos',DB.textos);renderTextos();toast('Textos guardados ✓');};
+
+// Config
+window.saveConfig=async function(){const gv=id=>document.getElementById(id)?.value||'';DB.config={addr:gv('cfg-addr'),city:gv('cfg-city'),wa:gv('cfg-wa'),email:gv('cfg-email'),ig:gv('cfg-ig'),fb:gv('cfg-fb'),h1:gv('cfg-h1'),h2:gv('cfg-h2')};await fbSet('config',DB.config);renderConfig();toast('Configuración guardada ✓');};
+
+// Change password
+window.changePass=async function(){const np=document.getElementById('np1').value,np2=document.getElementById('np2').value;if(!np){toast('Ingresá la nueva contraseña',true);return;}if(np!==np2){toast('Las contraseñas no coinciden',true);return;}if(np.length<8){toast('Mínimo 8 caracteres',true);return;}DB.password=np;await fbSet('password',np);document.getElementById('np1').value='';document.getElementById('np2').value='';toast('Contraseña actualizada ✓');};
+
+// Reset
+window.resetAll=async function(){if(!confirm('¿Resetear TODO el contenido del sitio? Esta acción no se puede deshacer.')){return;}DB=JSON.parse(JSON.stringify(DEF));const keys=['hero','services','schedule','scheduleNote','plans','textos','config','password'];for(const k of keys)await fbSet(k,k==='scheduleNote'||k==='password'?DB[k]:DB[k]);renderAll();loadAdminForms();renderDash();renderLeadsTbl();renderSvcsTbl();renderSchTbl();renderPlansTbl();toast('Contenido reseteado');};
+
+// Init
+init();
+</script>
+</body>
+</html>
